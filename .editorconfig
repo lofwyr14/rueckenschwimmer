@@ -1,0 +1,27 @@
+# editorconfig.org
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+tab_width = 2
+indent_size = tab
+ij_continuation_indent_size = 4
+max_line_length = 120
+trim_trailing_whitespace = true
+insert_final_newline = true
+ij_any_keep_blank_lines_in_declarations = 1
+ij_any_keep_blank_lines_in_code = 1
+ij_any_for_brace_force = always
+ij_any_if_brace_force = always
+
+[*.java]
+ij_java_method_parameters_new_line_after_left_paren = true
+ij_java_doc_keep_empty_parameter_tag = false
+ij_java_doc_keep_empty_return_tag = false
+ij_java_doc_keep_empty_throws_tag = false
+ij_java_class_count_to_use_import_on_demand = 9999
+ij_java_names_count_to_use_import_on_demand = 9999
+ij_java_packages_to_use_import_on_demand = 
