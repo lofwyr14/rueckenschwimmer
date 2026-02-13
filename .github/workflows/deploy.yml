@@ -13,18 +13,20 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-#      - name: Bucket actions
-#        uses: actions/setup-node@v1
-#        with:
-#          node-version: 8
-#      - run: npm i
-#      - run: npm run test
-#      - run: npm run generate
-
-      - name: Publish
+      - name: Publish regular files
         uses: nogsantos/scp-deploy@master
         with:
-          src: ./www/* ./www/.*
+          src: ./www/*
+          host: ${{ secrets.STRATO_SSH_HOST }}
+          remote: rueckenschwimmer
+          port: 22
+          user: ${{ secrets.STRATO_SSH_USER }}
+          key: ${{ secrets.STRATO_SSH_KEY }}
+
+      - name: Publish hidden files
+        uses: nogsantos/scp-deploy@master
+        with:
+          src: ./www/.*
           host: ${{ secrets.STRATO_SSH_HOST }}
           remote: rueckenschwimmer
           port: 22
