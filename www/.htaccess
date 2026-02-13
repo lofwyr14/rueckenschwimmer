@@ -1,0 +1,6 @@
+Options +Indexes
+
+RewriteEngine On
+
+RewriteCond %{QUERY_STRING} (.*)(^|&)(utm_[^&]+|fbclid|gclid|msclkid)=[^&]*&?(.*) [NC]
+RewriteRule ^ %{REQUEST_URI}?%1%4 [R=301,L]
